@@ -6,7 +6,7 @@ export default function Header() {
 
   return (
     <header className="w-full bg-[#1d3962] shadow-lg">
-      <div className="flex flex-wrap items-center justify-between w-full py-4 px-4 sm:px-6">
+      <div className="flex items-center w-full py-4 px-4 sm:px-6">
         {/* Logo + text */}
         <div className="flex items-center gap-2 sm:gap-3">
           <img

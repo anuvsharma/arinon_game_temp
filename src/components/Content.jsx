@@ -10,7 +10,7 @@ export default function CircleSection() {
   const [active, setActive] = useState(null);
 
   return (
-    <section id="content" className="min-h-screen bg-white flex items-center justify-center">
+    <section id="content" className="min-h-screen bg-white flex flex-col items-center justify-center">
       {/* Big Blue Box filling most of section */}
       <div className="bg-[#1d3962] rounded-xl shadow-lg p-24 w-11/12 h-[85vh] flex flex-col items-center text-white">
         <h2 className="text-4xl sm:text-5xl font-bold mb-16">New Content</h2>

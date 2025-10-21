@@ -5,12 +5,12 @@ import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
 
 const scrollerItems = [
-  { id: 1, title: "Item 1", desc: "Description 1" },
-  { id: 2, title: "Item 2", desc: "Description 2" },
-  { id: 3, title: "Item 3", desc: "Description 3" },
-  { id: 4, title: "Item 4", desc: "Description 4" },
-  { id: 5, title: "Item 5", desc: "Description 5" },
-  { id: 6, title: "Item 6", desc: "Description 6" },
+  { id: 1, title: "Item 1", desc: "Description 1", image: "https://swiperjs.com/demos/images/nature-1.jpg" },
+  { id: 2, title: "Item 2", desc: "Description 2", image: "https://swiperjs.com/demos/images/nature-2.jpg" },
+  { id: 3, title: "Item 3", desc: "Description 3", image: "https://swiperjs.com/demos/images/nature-3.jpg" },
+  { id: 4, title: "Item 4", desc: "Description 4", image: "https://swiperjs.com/demos/images/nature-4.jpg" },
+  { id: 5, title: "Item 5", desc: "Description 5", image: "https://swiperjs.com/demos/images/nature-5.jpg" },
+  { id: 6, title: "Item 6", desc: "Description 6", image: "https://swiperjs.com/demos/images/nature-6.jpg" },
 ];
 
 export default function Scroller() {
@@ -29,13 +29,14 @@ export default function Scroller() {
           pagination={{ clickable: true }}
           navigation={true}
           modules={[Pagination, Navigation]}
-          className="mySwiper"
+          className="mySwiper [&_.swiper-pagination-bullet]:!bg-white"
         >
           {scrollerItems.map((item) => (
             <SwiperSlide key={item.id}>
-              <div className="bg-[#1d3962] text-white h-80 rounded-xl flex flex-col items-center justify-center shadow-xl">
-                <h3 className="text-3xl font-bold">{item.title}</h3>
-                <p className="text-lg mt-4">{item.desc}</p>
+              <div className="bg-[#1d3962] text-white h-100 rounded-xl flex flex-col items-center justify-center shadow-xl">
+                <img
+                  src={item.image}
+                />
               </div>
             </SwiperSlide>
           ))}
