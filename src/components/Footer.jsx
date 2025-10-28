@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 py-8 text-center text-gray-400">
+    <footer className="bg-[#0D151F] py-8 text-center text-gray-400">
       <p>© 2025 ArinonGames. All rights reserved.</p>
       <div className="flex justify-center gap-6 mt-4">
         <a

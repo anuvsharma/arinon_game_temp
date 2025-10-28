@@ -30,14 +30,13 @@ export default function Selector() {
   return (
     <section
       id="selector"
-      className="min-h-screen bg-[#F37C20] flex flex-col items-center justify-center"
+      className="bg-[#0D151F] flex flex-col items-center justify-center text-white"
     >
       {/* Main Box */}
-      <div className="relative border-[#F37C20] bg-[#1d3962] text-white min-h-[700px] w-full flex flex-col items-center justify-evenly py-10">
-        
-        {/* Title now inside the blue box */}
-        <h2 className="text-4xl font-bold text-center text-white mb-8">
-          Character Selector
+      <div className="relative bg-[#0A1B2A] w-full min-h-[700px] flex flex-col items-center justify-evenly py-10 m-9">
+        {/* Title */}
+        <h2 className="text-6xl font-bold text-center text-[#ffffff] mb-8">
+          CHARACTER SELECTOR
         </h2>
 
         {/* Main Content */}
@@ -47,21 +46,24 @@ export default function Selector() {
             <img
               src={selected.image}
               alt={selected.name}
-              className="object-cover transition-all duration-700 rounded-lg max-h-[400px]"
+              className="object-cover transition-all duration-700 rounded-lg max-h-[400px] border-4 border-[#F37C20] shadow-[0_0_20px_#00000070]"
             />
+            {/* <p className="mt-4 text-lg font-semibold text-[#F37C20]">
+              {selected.desc}
+            </p> */}
           </div>
 
-          {/* Boxes Inside (to the right) */}
+          {/* Boxes on the Right */}
           <div className="absolute top-0 right-8 flex flex-col gap-7 mt-8">
             {characters.map((char) => (
               <button
                 key={char.id}
                 onClick={() => setSelected(char)}
-                className={`relative h-20 w-40 rounded-lg border-2 overflow-hidden transition-all duration-700
+                className={`relative h-20 w-40 rounded-lg border-2 overflow-hidden transition-all duration-500
                   ${
                     selected.id === char.id
-                      ? "border-[#F37C20] scale-125"
-                      : "border-[#1d3962] hover:border-[#F37C20] hover:scale-125"
+                      ? "border-[#F37C20] scale-110 shadow-[0_0_20px_#F37C20]"
+                      : "border-[#2A2D32] hover:border-[#F37C20] hover:scale-105"
                   }`}
               >
                 <img
@@ -70,12 +72,12 @@ export default function Selector() {
                   className="h-full w-full object-cover"
                 />
                 <div
-                  className={`absolute inset-0 transition-all duration-700 ${
+                  className={`absolute inset-0 transition-all duration-500 ${
                     selected.id === char.id
-                      ? "bg-transparent"
-                      : "bg-gray-600/50 hover:bg-transparent"
+                      ? "bg-black/30"
+                      : "bg-[#0D151F]/70 hover:bg-[#0D151F]/40"
                   }`}
-                ></div>
+                />
               </button>
             ))}
           </div>

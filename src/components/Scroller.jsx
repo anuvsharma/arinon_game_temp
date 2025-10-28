@@ -19,7 +19,7 @@ export default function Scroller() {
       id="scroller"
       className="min-h-screen bg-[#F37C20] flex flex-col items-center justify-center py-16"
     >
-      <h2 className="text-5xl font-bold text-white mb-12">Scroller Section</h2>
+      <h2 className="text-6xl font-bold text-white mb-12">Scroller Section</h2>
 
       <div className="w-full max-w-6xl px-6">
         <Swiper
