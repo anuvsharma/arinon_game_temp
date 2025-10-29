@@ -4,6 +4,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
 
+
 const scrollerItems = [
   { id: 1, title: "Item 1", desc: "Description 1", image: "https://swiperjs.com/demos/images/nature-1.jpg" },
   { id: 2, title: "Item 2", desc: "Description 2", image: "https://swiperjs.com/demos/images/nature-2.jpg" },

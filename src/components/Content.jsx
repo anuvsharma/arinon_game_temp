@@ -1,13 +1,32 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const circles = [
-  { id: 1, name: "Circle 1", desc: "This is the first circle" },
-  { id: 2, name: "Circle 2", desc: "This is the second circle" },
-  { id: 3, name: "Circle 3", desc: "This is the third circle" },
+  { id: 1, name: "CIRCLE 1", desc: "This is the first circle" },
+  { id: 2, name: "CIRCLE 2", desc: "This is the second circle" },
+  { id: 3, name: "CIRCLE 3", desc: "This is the third circle" },
 ];
 
 export default function CircleSection() {
   const [active, setActive] = useState(null);
+
+  useEffect(() => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.to(".content-box", {
+    opacity: 1,
+    y: 0,
+    duration: 3,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".content-box",
+      start: "top 50%",
+      toggleActions: "play none none none",
+    },
+  });
+}, []);
+
 
   return (
     <section
@@ -15,7 +34,7 @@ export default function CircleSection() {
       className="min-h-screen bg-[#0D151F] flex flex-col items-center justify-center text-[#ffffff]"
     >
       {/* Big Box */}
-      <div className="bg-[#0A1B2A] rounded-xl shadow-lg p-24 w-11/12 h-[85vh] flex flex-col items-center text-center">
+      <div className="content-box bg-[#0A1B2A] rounded-xl shadow-lg p-24 w-11/12 h-[85vh] flex flex-col items-center text-center opacity-0">
         <h2 className="text-6xl sm:text-6xl font-bold mb-16 text-[#ffffff]">
           New Content
         </h2>
@@ -28,7 +47,7 @@ export default function CircleSection() {
               onClick={() => setActive(c)}
               className="w-44 h-44 flex items-center justify-center rounded-full 
                          bg-[#F37C20] text-[#ffffff] font-bold text-lg 
-                         shadow-lg hover:scale-110 transition-transform"
+                         shadow-lg hover:scale-110 transition-transform duration-700"
             >
               {c.name}
             </button>

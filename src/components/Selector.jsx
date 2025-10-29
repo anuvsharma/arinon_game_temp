@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { gsap } from "gsap";
 
 const characters = [
   {
@@ -27,13 +28,21 @@ const characters = [
 export default function Selector() {
   const [selected, setSelected] = useState(characters[0]);
 
+  useEffect(() => {
+  gsap.fromTo(
+    ".main-box",
+    { opacity: 0, y: 100 },      // starting point
+    { opacity: 1, y: 0, duration: 2, ease: "power3.out" } // ending point
+  );
+}, []);
+
   return (
     <section
       id="selector"
       className="bg-[#0D151F] flex flex-col items-center justify-center text-white"
     >
       {/* Main Box */}
-      <div className="relative bg-[#0A1B2A] w-full min-h-[700px] flex flex-col items-center justify-evenly py-10 m-9">
+      <div className="main-box relative bg-[#0A1B2A] w-full min-h-[700px] flex flex-col items-center justify-evenly m-9">
         {/* Title */}
         <h2 className="text-6xl font-bold text-center text-[#ffffff] mb-8">
           CHARACTER SELECTOR
