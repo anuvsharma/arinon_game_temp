@@ -1,6 +1,9 @@
 import astronautImage from "./assets/astronaut.png";
 import Header from "./components/Header";
-import Selector from "./components/Selector";
+import Hero from "./components/HeroSection";
+import About from "./components/AboutHome";
+import Featured from "./components/Featured";
+import ContactPreview from "./components/ContactHome";
 import Content from "./components/Content";
 import Scroller from "./components/Scroller";
 import Footer from "./components/Footer";
@@ -19,9 +22,10 @@ function App() {
     // </div>
     <div className="w-full min-h-screen bg-black text-gray-100 font-sans">
       <Header />
-      <Selector />
-      <Content />
-      <Scroller />
+      <Hero />
+      <About />
+      <Featured />
+      <ContactPreview />
       <Footer />
     </div>
   );

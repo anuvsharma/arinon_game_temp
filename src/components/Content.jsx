@@ -12,29 +12,28 @@ export default function CircleSection() {
   const [active, setActive] = useState(null);
 
   useEffect(() => {
-  gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger);
 
-  gsap.to(".content-box", {
-    opacity: 1,
-    y: 0,
-    duration: 3,
-    ease: "power2.out",
-    scrollTrigger: {
-      trigger: ".content-box",
-      start: "top 50%",
-      toggleActions: "play none none none",
-    },
-  });
-}, []);
-
+    gsap.to(".content-box", {
+      opacity: 1,
+      y: 0,
+      duration: 3,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: ".content-box",
+        start: "top 50%",
+        toggleActions: "play none none none",
+      },
+    });
+  }, []);
 
   return (
     <section
       id="content"
-      className="min-h-screen bg-[#0D151F] flex flex-col items-center justify-center text-[#ffffff]"
+      className="min-h-screen bg-[#0A1B2A] flex flex-col items-center justify-center text-[#ffffff]"
     >
       {/* Big Box */}
-      <div className="content-box bg-[#0A1B2A] rounded-xl shadow-lg p-24 w-11/12 h-[85vh] flex flex-col items-center text-center opacity-0">
+      <div className="content-box bg-[#0A1B2A] rounded-xl p-24 w-11/12 h-[85vh] flex flex-col items-center text-center opacity-0">
         <h2 className="text-6xl sm:text-6xl font-bold mb-16 text-[#ffffff]">
           New Content
         </h2>
@@ -58,7 +57,7 @@ export default function CircleSection() {
       {/* Popup Modal */}
       {active && (
         <div className="fixed inset-0 flex items-center justify-center bg-[#000000] bg-opacity-60 z-50">
-          <div className="relative bg-[#2a2d32] rounded-lg shadow-xl p-6 w-96 text-[#ffffff]">
+          <div className="relative bg-[#2a2d32] p-6 w-96 text-[#ffffff]">
             {/* Close button (X in top-right) */}
             <button
               onClick={() => setActive(null)}
