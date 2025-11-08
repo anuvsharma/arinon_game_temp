@@ -4,6 +4,7 @@ import About from "./pages/About";
 import Games from "./pages/Games";
 import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer"
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
         <Route path="/games" element={<Games />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }

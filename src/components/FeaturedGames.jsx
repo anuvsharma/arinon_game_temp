@@ -30,7 +30,7 @@ export default function FeaturedGames() {
   return (
     <section
       id="featured"
-      className="min-h-screen bg-[#0D151F] text-white flex flex-col items-center justify-center overflow-hidden"
+      className="min-h-screen bg-[#0A1B2A] text-white flex flex-col items-center justify-center overflow-hidden"
     >
       {/* Lighting */}
       <div className="absolute inset-0 bg-gradient-radial from-[#F37C20]/10 via-transparent to-transparent pointer-events-none"></div>

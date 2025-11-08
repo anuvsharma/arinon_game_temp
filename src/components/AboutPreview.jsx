@@ -1,12 +1,13 @@
 import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import astronaut from "../assets/astronaut.png"
 
 export default function AboutSection() {
   return (
     <section
       id="about"
-      className="min-h-[70vh] bg-[#0A1B2A] text-white flex items-center justify-center py-20 px-10"
+      className="min-h-[70vh] bg-[#0D151F] text-white flex items-center justify-center py-20 px-10"
     >
       <div className="about-container max-w-6xl flex flex-col md:flex-row items-center gap-16">
         {/* Left Side - Text */}
@@ -33,11 +34,8 @@ export default function AboutSection() {
 
         {/* Right Side - Visual Placeholder */}
         <div className="flex-1 flex justify-center">
-          <div className="relative w-[380px] h-[380px] rounded-2xl overflow-hidden shadow-lg border border-[#F37C20]/40">
-            <div className="absolute inset-0 bg-[#F37C20]/20 blur-2xl"></div>
-            <div className="relative w-full h-full bg-[#1C2733] flex items-center justify-center text-[#ffffff80] font-semibold text-lg">
-              [ Astronaught Image Here ]
-            </div>
+          <div className="relative w-[380px] h-[380px] rounded-2xl">
+              <img src={astronaut} />
           </div>
         </div>
       </div>

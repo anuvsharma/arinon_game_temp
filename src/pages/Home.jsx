@@ -11,7 +11,6 @@ export default function Home() {
       <FeaturedGames />
       <AboutPreview />
       <ContactPreview />
-      <Footer />
     </>
   );
 }
