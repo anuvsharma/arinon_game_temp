@@ -30,57 +30,57 @@ export default function FeaturedGames() {
   return (
     <section
       id="featured"
-      className="min-h-screen bg-[#0A1B2A] text-white flex flex-col items-center justify-center overflow-hidden"
+      className="min-h-screen bg-[#0A1B2A] text-white flex flex-col items-center justify-center px-4 sm:px-8 py-20 overflow-hidden"
     >
       {/* Lighting */}
       <div className="absolute inset-0 bg-gradient-radial from-[#F37C20]/10 via-transparent to-transparent pointer-events-none"></div>
 
       {/* Main Container */}
-      <div className="featured-container relative w-full max-w-7xl flex flex-col items-center justify-center text-center">
+      <div className="featured-container relative w-full max-w-7xl flex flex-col items-center text-center">
         {/* Text Container */}
-        <div className="mb-16">
-          <h2 className="text-5xl md:text-6xl font-bold text-[#F37C20] tracking-wide">
+        <div className="mb-12 sm:mb-16 px-4">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#F37C20]">
             Featured Games
           </h2>
-          <hr className="my-4 border-t-2 border-gray-500" />
-          <p className="mt-4 text-lg text-gray-300 max-w-xl mx-auto">
-            Discover our latest creations. Worlds crafted to with a blend of art
+          <hr className="my-4 border-t-2 border-gray-500 w-32 mx-auto" />
+          <p className="text-sm sm:text-base md:text-lg text-gray-300 max-w-xl mx-auto">
+            Discover our latest creations. Worlds crafted with a blend of art
             and gameplay to reach new heights.
           </p>
         </div>
 
         {/* Showcase Container */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-16">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-10 sm:gap-16 w-full px-4">
           {/* Main Game */}
-          <div className="relative flex flex-col items-center justify-center w-full md:w-3/4">
+          <div className="relative flex flex-col items-center w-full md:w-3/4">
             {/* Lighting */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-[70%] h-[70%] bg-[#F37C20]/20 blur-3xl rounded-full"></div>
+              <div className="w-[60%] sm:w-[70%] h-[60%] sm:h-[70%] bg-[#F37C20]/20 blur-3xl rounded-full"></div>
             </div>
 
             {/* Main Image */}
             <img
               src={selected.image}
               alt={selected.name}
-              className="relative z-10 object-cover rounded-2xl max-h-[750px] w-full md:w-[95%] border border-[#F37C20]/40 shadow-[0_0_50px_#00000090] transition-all duration-700"
+              className="relative z-10 object-cover rounded-2xl max-h-[350px] sm:max-h-[500px] md:max-h-[650px] w-full md:w-[95%] border border-[#F37C20]/40 shadow-[0_0_40px_#00000090] transition-all duration-700"
             />
 
             {/* Description */}
-            <h3 className="text-3xl font-semibold mt-8 text-[#F37C20] drop-shadow-[0_0_10px_#F37C20]/50">
+            <h3 className="text-2xl sm:text-3xl font-semibold mt-6 sm:mt-8 text-[#F37C20]">
               {selected.name}
             </h3>
-            <p className="text-lg opacity-90 mt-3 max-w-2xl mx-auto px-4">
+            <p className="text-base sm:text-lg opacity-90 mt-2 sm:mt-3 max-w-2xl mx-auto px-2">
               {selected.desc}
             </p>
           </div>
 
           {/* Thumbnails */}
-          <div className="flex md:flex-col gap-6 justify-center items-center">
+          <div className="flex flex-col gap-4 sm:gap-6 justify-center items-center">
             {games.map((game) => (
               <button
                 key={game.id}
                 onClick={() => setSelected(game)}
-                className={`relative h-24 w-44 rounded-xl overflow-hidden border transition-all duration-500
+                className={`relative h-20 w-32 sm:h-24 sm:w-44 rounded-xl overflow-hidden border transition-all duration-500
                   ${
                     selected.id === game.id
                       ? "border-[#F37C20] shadow-[0_0_20px_#F37C20] scale-110"
@@ -92,6 +92,7 @@ export default function FeaturedGames() {
                   alt={game.name}
                   className="h-full w-full object-cover transition-transform duration-700 hover:scale-110"
                 />
+
                 {/* Overlay Tint */}
                 <div
                   className={`absolute inset-0 transition-all duration-500 ${
@@ -100,7 +101,8 @@ export default function FeaturedGames() {
                       : "bg-black/60 hover:bg-transparent"
                   }`}
                 ></div>
-                <span className="absolute bottom-2 left-3 text-sm text-white font-semibold tracking-wide drop-shadow-[0_0_8px_#000000]">
+
+                <span className="absolute bottom-2 left-3 text-xs sm:text-sm text-white font-semibold">
                   {game.name}
                 </span>
               </button>
@@ -109,10 +111,10 @@ export default function FeaturedGames() {
         </div>
 
         {/* View All Games Button */}
-        <div className="mt-20">
+        <div className="mt-16 sm:mt-20">
           <a
             href="/games"
-            className="px-8 py-4 bg-[#F37C20] text-white text-lg font-semibold rounded-full shadow-[0_0_20px_#F37C20]/50 hover:bg-[#ff8f3f] transition-all duration-300"
+            className="px-6 sm:px-8 py-3 sm:py-4 bg-[#F37C20] text-white text-base sm:text-lg font-semibold rounded-full shadow-[0_0_20px_#F37C20]/50 hover:bg-[#ff8f3f] transition-all duration-300"
           >
             View All Games
           </a>
